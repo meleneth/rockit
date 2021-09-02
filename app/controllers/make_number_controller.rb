@@ -1,5 +1,5 @@
 class MakeNumberController < ApplicationController
   def bigger
-    @number = 1
+    @number = $redis_store.incr "number"
   end
 end
